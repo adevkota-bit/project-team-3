@@ -23,5 +23,5 @@ Hello, my name is Yuxuan Wang. I'm a full time student in MSCS at BU-MET. I am f
 
 # Jingjing Tang
 
-<p>Hello, my name is Jingjing Tang. I lived in Tucson mostly and and I'm also a full-time student in MSCS program at met. I am familiar with Java, Python and SQL. Some of my interests includes Machine learning and software development. During my free time, I enjoy fencing and hiking with my family and friends. It's the perfect balance between the technical and the recreational for me.
-</p>
+Hello, my name is Jingjing Tang. I lived in Tucson mostly and and I'm also a full-time student in MSCS program at met. I am familiar with Java, Python and SQL. Some of my interests includes Machine learning and software development. During my free time, I enjoy fencing and hiking with my family and friends. It's the perfect balance between the technical and the recreational for me.
+

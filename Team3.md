@@ -18,3 +18,6 @@ Hello, my name is Abigya Devkota, I go by Abi. I am based in Boston, MA and curr
 am mostly familiar with Java and love learning ways to write sustainable code. Some of my interests include AWS and AI.
 During my free time, I like reading books and spending time with friends and family. 
 
+# Yuxuan Wang
+Hello, my name is Yuxuan Wang. I'm a full time student in MSCS at BU-MET. I am familiar with Java, Python, SQL and R. I have a dual background in data analytics and computer science and i love to deal with challenges and open to learn new things. I'm also interested in cloud platforms like AWS and Azure and machine learning models. I have two cats at home and there are siblings. Fun fact about me is i'm a theme park fanatics and love to visit Universal and Disney so much! 
+ 

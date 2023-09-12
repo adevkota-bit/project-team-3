@@ -1,4 +1,4 @@
-# GroupProjectTemplate
+# HRMasery
 We are embarking on a six-week project to create an Employee Management System using Java and Spring Boot, motivated by the need to showcase CRUD operations (Create, Read, Update, Delete) in a practical setting.
 
 Our software will help organizations efficiently manage employee roles. Staff and administration workers will use it to create, read, update, and delete roles. The Following includes basic underlying potential users, functionalities, and technology stack. Additional users, functionalities, and tool may be added as this project progresses within our time and ability constraints. 

@@ -25,3 +25,6 @@ Hello, my name is Yuxuan Wang. I'm a full time student in MSCS at BU-MET. I am f
 
 Hello, my name is Jingjing Tang. I lived in Tucson mostly and and I'm also a full-time student in MSCS program at met. I am familiar with Java, Python and SQL. Some of my interests includes Machine learning and software development. During my free time, I enjoy fencing and hiking with my family and friends. It's the perfect balance between the technical and the recreational for me.
 
+# weihao Mai
+
+Hello, my name is weihao Mai, I mainly use Java language to develop back-end applications, familiar with Spring Boot, Hibernate, Maven and other frameworks and tools. I am also familiar with the design and operation of MYSQL database, and can write efficient SQL statements and stored procedures. I have a strong interest and passion for programming and enjoy learning new technologies and solving complex problems. I have good communication and teamwork skills and can adapt to different working environments and needs.

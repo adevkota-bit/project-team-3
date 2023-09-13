@@ -29,8 +29,8 @@ Hello, my name is Jingjing Tang. I lived in Tucson mostly and and I'm also a ful
 
 Hello, my name is weihao Mai, I mainly use Java language to develop back-end applications, familiar with Spring Boot, Hibernate, Maven and other frameworks and tools. I am also familiar with the design and operation of MYSQL database, and can write efficient SQL statements and stored procedures. I have a strong interest and passion for programming and enjoy learning new technologies and solving complex problems. I have good communication and teamwork skills and can adapt to different working environments and needs.
 
-
-
+# Haolun Li
+My name is Haolun li. I'm a full time student in MSCS at BU-MET. I am familiar with Java, Python and cpp. I love to deal with challenges and open to learn new things. I'm currently building a quantitative trading system using c++ and some basic strategies. I'm a bow hunter and going to Mass and New Hampshire for hunting this fall, you are welcome to join me.
 # Zhiwei Lin
 
 Hello, my name is Zhiwei Lin. I take on-line class before in China. For some reason I chose to come back this semester to finish the rest of my courses. My major is MSCS and I also take some CS-ADA course. I am familiar with Java and R. I am very glad to meet all of you and hope to improve my ability in the group project. My hobbies are playing basketball and playing League of Legends or VALORANT.

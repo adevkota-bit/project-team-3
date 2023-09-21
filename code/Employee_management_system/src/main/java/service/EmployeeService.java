@@ -10,12 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+
 public class EmployeeService {
 
     private EmployeeRepository employeeRepository;
 
-    @Autowired
     public EmployeeService(EmployeeRepository employeeRepository) {
 
         this.employeeRepository = employeeRepository;
@@ -23,7 +22,7 @@ public class EmployeeService {
 
     public List<Employee> getAllEmployee() {
 
-        return employeeRepository.findAll();
+        return (List<Employee>) employeeRepository.findAll();
 
     }
 
@@ -35,7 +34,7 @@ public class EmployeeService {
         employeeRepository.save(employee);
     }
 
-    public void deleteEmployee(Long employeeId) {
+    public void deleteEmployee(Integer employeeId) {
         boolean employeeExist = employeeRepository.existsById(employeeId);
         if (!employeeExist){
             throw new IllegalStateException("Employee does not exist");
@@ -45,7 +44,7 @@ public class EmployeeService {
 
     //non-query based method
     @Transactional
-    public void updateEmployeeName(Long employeeId, String name) {
+    public void updateEmployeeName(Integer employeeId, String name) {
 
         Employee employee = employeeRepository.findById(employeeId).get();
 

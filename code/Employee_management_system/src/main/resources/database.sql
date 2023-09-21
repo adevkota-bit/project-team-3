@@ -22,3 +22,11 @@ CREATE TABLE vacation_request (
                                FOREIGN KEY (employee_id) references employee_info(employee_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+INSERT INTO employee_info(employee_id,name,email,phone_number,job_title,AnnualSalary)
+VALUES (100,'Steven','steven.king@sqltutorial.org','515.123.4567','employee',24000.00);
+INSERT INTO employee_info(employee_id,name,email,phone_number,job_title,AnnualSalary)
+VALUES (101,'Neena','Neena@sqltutorial.org','554.123.4567','employee',27500.00);
+INSERT INTO employee_info(employee_id,name,email,phone_number,job_title,AnnualSalary)
+VALUES (102,'Lex','Lex@sqltutorial.org','8325.123.4567','manager',80000.00);
+INSERT INTO employee_info(employee_id,name,email,phone_number,job_title,AnnualSalary)
+VALUES (103,'Alexander','alexander.hunold@sqltutorial.org','717.123.4567','employee',27000.00);

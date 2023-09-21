@@ -29,13 +29,13 @@ public class EmployeeController {
     }
 
     @DeleteMapping(path = "{employeeID}")
-    public void deleteEmployee(@PathVariable Long employeeID){
+    public void deleteEmployee(@PathVariable Integer employeeID){
         employeeService.deleteEmployee(employeeID);
     }
 
     @PutMapping("{employeeId}")
     public void updateEmployeeName(
-            @PathVariable Long employeeId,
+            @PathVariable Integer employeeId,
             @RequestParam(required = false) String name
     ){
         employeeService.updateEmployeeName(employeeId, name);

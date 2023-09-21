@@ -16,7 +16,7 @@ public class Employee {
 //            strategy = GenerationType.SEQUENCE,
 //            generator = "employee_sequence"
 //    )
-    private Long id;
+    private Integer id;
     private String name;
     private String email;
     private String phoneNumber;
@@ -24,7 +24,7 @@ public class Employee {
     private Double annualSalary;
 
     // constructor
-    public Employee(Long id,
+    public Employee(Integer id,
                     String name,
                     String email,
                     String phoneNumber,
@@ -50,11 +50,11 @@ public class Employee {
         this.name = name;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -93,8 +93,10 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "name='" + name + '\'' +
-                ", id=" + id +
+                "id='" + id + '\'' +
+                ", email=" + email +
+                ", phoneNumber=" + phoneNumber +
+                ", name=" + name +
                 ", jobTitle='" + jobTitle + '\'' +
                 ", annualSalary=" + annualSalary +
                 '}';

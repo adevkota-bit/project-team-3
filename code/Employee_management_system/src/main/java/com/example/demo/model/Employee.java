@@ -18,27 +18,26 @@ public class Employee {
 //    )
     private Long id;
     private String name;
+    private String email;
+    private String phoneNumber;
     private String jobTitle;
     private Double annualSalary;
 
 
-    /*
-    @Transient
-    private Integer age;
-
-    public Integer getAge(){
-        return Period.between(this.dob, LocalDate.now()).getYears();
-     */
-
-    public Employee(String name,
-                    Long id,
+    public Employee(Long id,
+                    String name,
+                    String email,
+                    String phoneNumber,
                     String jobTitle,
                     Double annualSalary) {
 
-        this.name = name;
         this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
         this.jobTitle = jobTitle;
         this.annualSalary = annualSalary;
+
     }
 
     public Employee(String name, String jobTitle, Double annualSalary) {

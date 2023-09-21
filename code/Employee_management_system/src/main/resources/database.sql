@@ -21,3 +21,4 @@ CREATE TABLE vacation_request (
                                status VARCHAR(20),
                                FOREIGN KEY (employee_id) references employee_info(employee_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+

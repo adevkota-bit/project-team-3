@@ -21,5 +21,6 @@ public class EmployeeServiceTests {
 //        employeeRepository = (EmployeeRepository) employeeList;
 
         assertEquals(employeeService.getAllEmployee(), employeeRepository);
+        return "1";
     }
 }

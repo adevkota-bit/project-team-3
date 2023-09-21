@@ -7,19 +7,20 @@ import jakarta.persistence.*;
 public class Employee {
 
     @Id
-    @SequenceGenerator(
-            name = "employee_sequence",
-            sequenceName = "employee_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "employee_sequence"
-    )
+//    @SequenceGenerator(
+//            name = "employee_sequence",
+//            sequenceName = "employee_sequence",
+//            allocationSize = 1
+//    )
+//    @GeneratedValue(
+//            strategy = GenerationType.SEQUENCE,
+//            generator = "employee_sequence"
+//    )
     private Long id;
     private String name;
     private String jobTitle;
     private Double annualSalary;
+
 
     /*
     @Transient
@@ -33,6 +34,7 @@ public class Employee {
                     Long id,
                     String jobTitle,
                     Double annualSalary) {
+
         this.name = name;
         this.id = id;
         this.jobTitle = jobTitle;

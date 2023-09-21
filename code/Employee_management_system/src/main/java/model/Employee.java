@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package model;
 
 import jakarta.persistence.*;
 
@@ -23,7 +23,7 @@ public class Employee {
     private String jobTitle;
     private Double annualSalary;
 
-
+    // constructor
     public Employee(Long id,
                     String name,
                     String email,
@@ -40,24 +40,11 @@ public class Employee {
 
     }
 
-    public Employee(String name, String jobTitle, Double annualSalary) {
-        this.name = name;
-        this.jobTitle = jobTitle;
-        this.annualSalary = annualSalary;
-    }
-
-    public Employee(String name) {
-
-        this.name = name;
-    }
 
     public Employee() {
     }
 
-    public String getName() {
-
-        return name;
-    }
+    public String getName() {return name;}
 
     public void setName(String name) {
         this.name = name;
@@ -85,6 +72,22 @@ public class Employee {
 
     public void setAnnualSalary(Double annualSalary) {
         this.annualSalary = annualSalary;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     @Override

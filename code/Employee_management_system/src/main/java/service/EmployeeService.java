@@ -1,11 +1,12 @@
-package com.example.demo._2_service;
+package service;
 
-import com.example.demo._3_repository.EmployeeRepository;
-import com.example.demo.model.Employee;
+import repository.EmployeeRepository;
+import model.Employee;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,6 +24,7 @@ public class EmployeeService {
     public List<Employee> getAllEmployee() {
 
         return employeeRepository.findAll();
+
     }
 
     public void addNewEmployee(Employee employee) {

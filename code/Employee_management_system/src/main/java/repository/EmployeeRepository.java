@@ -1,6 +1,6 @@
-package com.example.demo._3_repository;
+package repository;
 
-import com.example.demo.model.Employee;
+import model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

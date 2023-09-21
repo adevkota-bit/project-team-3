@@ -1,8 +1,8 @@
-package com.example.demo._1_controller;
+package controller;
 
 
-import com.example.demo._2_service.EmployeeService;
-import com.example.demo.model.Employee;
+import service.EmployeeService;
+import model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

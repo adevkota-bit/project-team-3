@@ -1,5 +1,7 @@
-package user;
+package Employee_Management_System.user;
 
+import Employee_Management_System.user.Employee;
+import Employee_Management_System.user.EmployeeRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,6 +99,7 @@ class EmployeeServiceTest {
         List<Employee> allEmployees = employeeRepository.findAll();
 
         Assertions.assertThat(allEmployees).hasSizeGreaterThan(0);
+        Assertions.assertThat(allEmployees).hasSize((int) employeeRepository.count());
     }
 
     @Test
@@ -185,19 +188,37 @@ class EmployeeServiceTest {
 
     @Test
     void updateEmployeeName() {
+        Employee employee1 = Employee.builder().name("Alex").id(1).email("alex.stevenson@gmail.com").annualSalary(25642.2).jobTitle("employee")
+                .build();
         // add into database
-        Employee employee = Employee.builder().name("Alex").email("alex.stevenson@gmail.com").id(123).annualSalary(12000.56).jobTitle("manager")
+        Employee employee2 = Employee.builder().name("Amanda").id(2).email("alex.son@gmail.com").annualSalary(24000.56).jobTitle("manager")
                 .build();
-        Employee employee2 = Employee.builder().name("Amanda").email("alex.son@gmail.com").annualSalary(24000.56).jobTitle("manager")
+        Employee employee3 = Employee.builder().name("Narayan").email("Narayan@gmail.com").annualSalary(46152.2).jobTitle("employee")
                 .build();
-        Employee savedEmployee = employeeRepository.save(employee);
-        employeeRepository.save(employee2);
+        Employee employee4 = Employee.builder().name("Wallace").email("Wallace@gmail.com").annualSalary(32152.2)
+                .build();
+        Employee employee5 = Employee.builder().name("Wong").email("Wong@gmail.com").annualSalary(25025.3).jobTitle("employee")
+                .build();
+        Employee employee6 = Employee.builder().name("Niomi").email("Niomi@gmail.com").annualSalary(46152.2).jobTitle("manager")
+                .build();
+        Employee employee7 = Employee.builder().name("Willy").email("Willy@gmail.com").annualSalary(32152.2)
+                .build();
+        Employee employee8 = Employee.builder().name("Ahmad").email("Ahmad@gmail.com").annualSalary(25025.3).jobTitle("manager")
+                .build();
 
-        Integer userId = 1;
+        employeeRepository.save(employee1);
+        employeeRepository.save(employee2);
+        employeeRepository.save(employee3);
+        employeeRepository.save(employee4);
+        employeeRepository.save(employee5);
+        employeeRepository.save(employee6);
+        employeeRepository.save(employee7);
+        employeeRepository.save(employee8);
+
+        Integer userId = 8;
         Employee optionalEmployee = employeeRepository.findEmployeeById(userId).get();
         optionalEmployee.setName("John");
         employeeRepository.save(optionalEmployee);
-
         //check updated name
         Employee updatedEmployee = employeeRepository.findEmployeeById(userId).get();
         Assertions.assertThat(updatedEmployee.getName()).isEqualTo("John");

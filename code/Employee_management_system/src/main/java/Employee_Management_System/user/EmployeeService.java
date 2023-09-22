@@ -1,5 +1,7 @@
-package user;
+package Employee_Management_System.user;
 
+import Employee_Management_System.user.Employee;
+import Employee_Management_System.user.EmployeeRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,5 +1,6 @@
-package user;
+package Employee_Management_System.user;
 
+import Employee_Management_System.user.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Component;

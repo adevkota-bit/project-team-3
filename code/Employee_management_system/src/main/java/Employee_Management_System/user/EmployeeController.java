@@ -1,8 +1,6 @@
-package user;
+package Employee_Management_System.user;
 
 
-import user.EmployeeService;
-import user.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

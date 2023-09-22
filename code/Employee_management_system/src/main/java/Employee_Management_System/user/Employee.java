@@ -1,4 +1,4 @@
-package user;
+package Employee_Management_System.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

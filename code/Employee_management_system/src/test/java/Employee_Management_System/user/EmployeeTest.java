@@ -1,5 +1,6 @@
-package user;
+package Employee_Management_System.user;
 
+import Employee_Management_System.user.Employee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

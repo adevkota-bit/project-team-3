@@ -1,4 +1,4 @@
-package model;
+package Employee_Management_System.credential;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,13 +13,13 @@ public class Credential {
     private String username; // or email
     @Column(name = "password_hash")
     private String passwordHash;
-    @Column(name = "employee_id")
-    private Integer employeeId;
+//    @Column(name = "employee_id")
+//    private Integer employeeId;
 
-    public Credential(String username, String passwordHash, Integer employeeId) {
+    public Credential(String username, String passwordHash) {
         this.username = username;
         this.passwordHash = passwordHash;
-        this.employeeId = employeeId;
+//        this.employeeId = employeeId;
     }
 
     public Credential() {
@@ -42,20 +42,20 @@ public class Credential {
         this.passwordHash = passwordHash;
     }
 
-    public Integer getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(Integer employeeId) {
-        this.employeeId = employeeId;
-    }
+//    public Integer getEmployeeId() {
+//        return employeeId;
+//    }
+//
+//    public void setEmployeeId(Integer employeeId) {
+//        this.employeeId = employeeId;
+//    }
 
     @Override
     public String toString() {
         return "Credential{" +
                 "username='" + username + '\'' +
                 ", passwordHash='" + passwordHash + '\'' +
-                ", employeeId=" + employeeId +
+//                ", employeeId=" + employeeId +
                 '}';
     }
 }

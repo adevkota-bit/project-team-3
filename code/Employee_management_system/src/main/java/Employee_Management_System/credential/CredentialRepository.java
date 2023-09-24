@@ -1,6 +1,5 @@
-package repository;
+package Employee_Management_System.credential;
 
-import model.Credential;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

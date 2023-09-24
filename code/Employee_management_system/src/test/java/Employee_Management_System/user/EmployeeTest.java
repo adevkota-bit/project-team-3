@@ -1,9 +1,9 @@
-package model;
+package Employee_Management_System.user;
 
+import Employee_Management_System.user.Employee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EmployeeTest {

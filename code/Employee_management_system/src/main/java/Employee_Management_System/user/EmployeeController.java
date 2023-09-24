@@ -1,8 +1,6 @@
-package controller;
+package Employee_Management_System.user;
 
 
-import service.EmployeeService;
-import model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +8,7 @@ import java.util.List;
 
 @RestController
 public class EmployeeController {
-
+    @Autowired
     private EmployeeService employeeService;
 
     @Autowired
@@ -30,7 +28,7 @@ public class EmployeeController {
 
     @DeleteMapping(path = "{employeeID}")
     public void deleteEmployee(@PathVariable Integer employeeID){
-        employeeService.deleteEmployee(employeeID);
+        employeeService.deleteEmployeeById(employeeID);
     }
 
     @PutMapping("{employeeId}")

@@ -1,9 +1,14 @@
-package model;
+package Employee_Management_System.user;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Table
+@Table(name = "employees_info")
+@Builder
 public class Employee {
 
     @Id
@@ -16,11 +21,18 @@ public class Employee {
 //            strategy = GenerationType.SEQUENCE,
 //            generator = "employee_sequence"
 //    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "name")
     private String name;
+    @Column(name = "email")
     private String email;
+    @Column(name = "phoneNumber")
     private String phoneNumber;
+    @Column(name = "jobTitle")
     private String jobTitle;
+    @Column(name = "annualSalary")
     private Double annualSalary;
 
     // constructor

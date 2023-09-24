@@ -1,18 +1,18 @@
-package service;
+package Employee_Management_System.user;
 
-import repository.EmployeeRepository;
-import model.Employee;
+import Employee_Management_System.user.Employee;
+import Employee_Management_System.user.EmployeeRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-
+@Service
 public class EmployeeService {
 
+    @Autowired
     private EmployeeRepository employeeRepository;
 
     public EmployeeService(EmployeeRepository employeeRepository) {
@@ -34,7 +34,7 @@ public class EmployeeService {
         employeeRepository.save(employee);
     }
 
-    public void deleteEmployee(Integer employeeId) {
+    public void deleteEmployeeById(Integer employeeId) {
         boolean employeeExist = employeeRepository.existsById(employeeId);
         if (!employeeExist){
             throw new IllegalStateException("Employee does not exist");

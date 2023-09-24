@@ -1,11 +1,10 @@
-package repository;
+package Employee_Management_System.user;
 
-import model.Employee;
+import Employee_Management_System.user.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
-import org.springframework.data.repository.CrudRepository;
+
 import java.util.Optional;
 
 @Component

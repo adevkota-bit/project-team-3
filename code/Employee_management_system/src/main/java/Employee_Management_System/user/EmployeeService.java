@@ -51,4 +51,13 @@ public class EmployeeService {
         employee.setName(name);
 
     }
+
+    public Optional<Employee> getEmployeeById(Long id) {
+        return employeeRepository.findEmployeeById(Math.toIntExact(id));
+    }
+
+    public Employee save(Employee employee) {
+        employeeRepository.save(employee);
+        return employee;
+    }
 }

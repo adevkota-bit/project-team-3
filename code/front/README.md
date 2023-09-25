@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Prerequisites
+
+Please install 'npm' and Node.js before running the project. 
+Helpful link: [install npm](https://radixweb.com/blog/installing-npm-and-nodejs-on-windows-and-mac)
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -9,6 +14,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
+You might need to install additional packages if you don't have them installed already. \
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\

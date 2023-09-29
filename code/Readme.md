@@ -21,7 +21,8 @@ FrontEnd is built using React.js.
 Please make sure you are using at least java 17. 
 
 1) cd to the project directory. 
-2) Run "docker-compose up" . This will build the containers for backend and frontend. 
-3) Open [http://localhost:3000](http://localhost:3000) to view the application in browser. 
+2) Run 'mvn clean install' or 'mvn package' to build the jar. 
+3) Run "docker-compose up" . This will build the containers for backend and frontend. 
+4) Open [http://localhost:3000](http://localhost:3000) to view the application in browser. 
 
 

@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import AddStaff from './Users/AddStaff';
 import App from './App';
 
 test('renders Add Staff page', () => {

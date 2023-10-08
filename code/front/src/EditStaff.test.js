@@ -1,13 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import ViewStaff from './Users/ViewStaff';
+import EditStaff from './Users/EditStaff';
 import { MemoryRouter } from 'react-router-dom';
 import axios from 'axios';
 
 
 jest.mock("axios");
 
-  test('renders View Staff page', async () => {
+  test('renders Edit Staff page', async () => {
     const fakeUser = { name:"Alice",
         jobTitle: "QA",
         annualSalary:"100000"};
@@ -17,14 +17,11 @@ jest.mock("axios");
     axios.get = jest.fn().mockResolvedValue(payload); 
 
 
-    render(<MemoryRouter><ViewStaff /></MemoryRouter>);
+    render(<MemoryRouter><EditStaff /></MemoryRouter>);
 
     
-    const staffDetails = screen.getByText(/Staff Details/i);
-    expect(staffDetails).toBeInTheDocument();
-
-    const details = screen.getByText(/Detail of user id:/i);
-    expect(details).toBeInTheDocument();
+    const editStaff = screen.getByText(/Edit Staff/i);
+    expect(editStaff).toBeInTheDocument();
 
     const name = screen.getByText(/Name/i);
     expect(name).toBeInTheDocument();
@@ -34,6 +31,12 @@ jest.mock("axios");
 
     const annualSalary = screen.getByText(/Annual Salary/i);
     expect(annualSalary).toBeInTheDocument();
+
+    const submit = screen.getByText(/Submit/i);
+    expect(submit).toBeInTheDocument();
+
+    const cancel = screen.getByText(/Cancel/i);
+    expect(cancel).toBeInTheDocument();
   });
 
   

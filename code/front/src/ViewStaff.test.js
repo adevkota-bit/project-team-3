@@ -5,7 +5,17 @@ import { MemoryRouter } from 'react-router-dom';
 import axios from 'axios';
 
 
-jest.mock("axios");
+jest.mock('axios', () => {
+  return {
+    create: jest.fn(() => ({
+      get: jest.fn(),
+      interceptors: {
+        request: { use: jest.fn(), eject: jest.fn() },
+        response: { use: jest.fn(), eject: jest.fn() }
+      }
+    }))
+  }
+})
 
   test('renders View Staff page', async () => {
     const fakeUser = { name:"Alice",

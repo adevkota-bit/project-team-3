@@ -5,8 +5,6 @@ import { MemoryRouter } from 'react-router-dom';
 import axios from 'axios';
 
 
-jest.mock("axios");
-
   test('renders Edit Staff page', async () => {
     const fakeUser = { name:"Alice",
         jobTitle: "QA",

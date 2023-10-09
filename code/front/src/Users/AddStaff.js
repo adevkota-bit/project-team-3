@@ -91,7 +91,7 @@ function AddStaff() {
             Submit 
           </button>
 
-          <Link className='bnt btn-outline-danger mx-2' to='/'>     {/*Cancel button has link to home page '/'*/}
+          <Link className='bnt btn-outline-danger mx-2' to='/home'>     {/*Cancel button has link to home page '/'*/}
             Cancel 
           </Link>
           </form>

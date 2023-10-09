@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import api from '../api';
 
 {/*these are Comments*/}
 
@@ -10,29 +11,28 @@ function AddStaff() {
   let navigate = useNavigate(); 
 
 
-  {/*make object*/}
   const [user, setUsers] = useState({
     name:"",
+    email:"",
+    phoneNumber:"",
     jobTitle:"",
     annualSalary:""
-  }); 
+  });
 
-  const{name, jobTitle, annualSalary} = user; 
+  const{name,email, phoneNumber, jobTitle, annualSalary} = user;
 
 
   {/*for each object, get each value*/}  
   const onInputChange = (e) =>{
     setUsers({...user, [e.target.name]:e.target.value});
 
-  }; 
+  };
 
-  {/*when clicking submit -> uses axios to postMapping onto url*/}
-  {/*then navigate back to homepage*/}
   const onSubmit= async(e) => {
     e.preventDefault();
-    await axios.post("http://localhost:8082/", user);  {/*postMapping for 1 staff*/}
-    navigate('/'); 
-  }; 
+    await api.post("/", user);
+    navigate('/home');
+  };
 
   {/*this is the actual render page*/}
   return (

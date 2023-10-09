@@ -1,20 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import api from '../api';
 
-{/*these are Comments*/}
 
 function EditStaff() {
-    {/*
-      The code takes a the user inputs and construction a staff object and then passes it to axios for putMapping.
-      The putMapping(backend) component takes the user made staff object and sets the attributes to the target staff
-  */}  
 
   let navigate = useNavigate(); 
 
   const {id} = useParams(); 
 
-  {/*make object*/}
   const [user, setUsers] = useState({
     name:"",
     jobTitle:"",
@@ -23,7 +18,6 @@ function EditStaff() {
 
   const{name, jobTitle, annualSalary} = user;
 
-  {/*for each object, get each value*/}  
   const onInputChange = (e) =>{
     setUsers({...user, [e.target.name]:e.target.value});
   }; 
@@ -33,17 +27,15 @@ function EditStaff() {
     loadStaff()
   }, []); 
 
-  {/*when submit is clicked, trigger axios put method  */}
   const onSubmit= async(e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:8082/employee/${id}`, user);                      {/*PutMapping for adding 1 staff*/}
-    navigate('/'); 
-  }; 
+    await api.put(`/employee/${id}`, user);
+    navigate('/home');
+  };
 
-  {/*load the current id enough via axios getMapping*/}
   const loadStaff = async ()=>{
-  const result = await axios.get(`http://localhost:8082/employee/${id}`);               {/*getMapping for getting 1 staff*/}
-    setUsers(result.data); 
+    const result = await api.get(`/employee/${id}`);
+    setUsers(result.data);
   };
 
 
@@ -101,7 +93,7 @@ function EditStaff() {
             Submit 
           </button>
 
-          <Link className='bnt btn-outline-danger mx-2' to='/'>
+          <Link className='bnt btn-outline-danger mx-2' to='/home'>
             Cancel 
           </Link>
           </form>

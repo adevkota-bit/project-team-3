@@ -40,10 +40,10 @@ class CredentialTest {
         String expectedPasswordHash = "someHashedPassword";
 
         // Act
-        credential.setPasswordHash(expectedPasswordHash);
+        credential.setPassword(expectedPasswordHash);
 
         // Assert
-        assertEquals(expectedPasswordHash, credential.getPasswordHash(), "The password hash returned should match the one set");
+        assertEquals(expectedPasswordHash, credential.getPassword(), "The password hash returned should match the one set");
     }
 
     @Test
@@ -52,9 +52,9 @@ class CredentialTest {
         String expectedPasswordHash = "someOtherHashedPassword";
 
         // Act
-        credential.setPasswordHash(expectedPasswordHash);
+        credential.setPassword(expectedPasswordHash);
 
         // Assert
-        assertEquals(expectedPasswordHash, credential.getPasswordHash(), "The password hash set should match the one returned");
+        assertEquals(expectedPasswordHash, credential.getPassword(), "The password hash set should match the one returned");
     }
 }

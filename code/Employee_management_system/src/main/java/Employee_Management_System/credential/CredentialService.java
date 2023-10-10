@@ -1,72 +1,50 @@
 package Employee_Management_System.credential;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
+import Employee_Management_System.Security.Service.JwtService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
-
 @Service
-public class CredentialService {
+@RequiredArgsConstructor
+public class CredentialService  {
+    private final CredentialRepository repository;
+    private final PasswordEncoder passwordEncoder;
+    private final JwtService jwtService;
+    private final AuthenticationManager authenticationManager;
 
-    @Autowired
-    private CredentialRepository credentialRepository;
-
-    public Credential createAccount(Credential credential) {
-        // Hash the password and save the credential
-        //String hashedPassword = password;
-        String password = credential.getPasswordHash();
-        credential.setPasswordHash(password);
-        return credentialRepository.save(credential);
+    public Employee_Management_System.Credential.AuthenticationResponse register(RegisterRequest request) {
+        var user = Credential.builder()
+                .firstname(request.getFirstname())
+                .lastname(request.getLastname())
+                .username(request.getUsername())
+                .password(passwordEncoder.encode(request.getPassword()))
+                .role(request.getRole())
+                .build();
+        repository.save(user);
+        var jwtToken = jwtService.generateToken(user);
+        return Employee_Management_System.Credential.AuthenticationResponse.builder()
+                .accessToken(jwtToken)
+                .build();
     }
 
-    public Credential login(String username, String password) {
-        Optional<Credential> optionalCredential = credentialRepository.findByUsername(username);
+    public Employee_Management_System.Credential.AuthenticationResponse authenticate(Employee_Management_System.Credential.AuthenticationRequest request) {
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        request.getUsername(),
+                        request.getPassword()
+                )
+        );
+        var user = repository.findByUsername(request.getUsername())
+                .orElseThrow();
+        var jwtToken = jwtService.generateToken(user);
 
-        if(optionalCredential.isPresent()) {
-            Credential credential = optionalCredential.get();
-            if(password.equals(credential.getPasswordHash())) {
-                return credential;
-            }
-        }
-        return null;
+        return Employee_Management_System.Credential.AuthenticationResponse.builder()
+                .accessToken(jwtToken)
+                .build();
     }
 
-//    // READ
-//    public Credential getCredential(String username) {
-//        return credentialRepository.findById(username)
-//                .orElseThrow(() -> new ResourceNotFoundException("Credential", "username", username));
-//    }
-//
-//    // UPDATE
-//    public Credential updateCredential(String username, Credential credentialDetails) {
-//        Credential credential = getCredential(username); // or use findById(username).orElseThrow(...)
-//        // Set fields that need to be updated
-//        credential.setPasswordHash(credentialDetails.getPasswordHash());
-//        return credentialRepository.save(credential);
-//    }
-//
-//    // DELETE
-//    public void deleteCredential(String username) {
-//        Credential credential = getCredential(username); // or use findById(username).orElseThrow(...)
-//        credentialRepository.delete(credential);
-//    }
-//
-//    // READ ALL
-//    public List<Credential> getAllCredentials() {
-//        return credentialRepository.findAll();
-//    }
-//
-//    public Credential saveCredential(Credential credential) {
-//        return credentialRepository.save(credential);
-//    }
-//
-//    public Optional<Credential> findCredentialById(String id) {
-//        return credentialRepository.findById(id);
-//    }
-//
-//    public void deleteCredential(Credential credential) {
-//        credentialRepository.delete(credential);
-//    }
 }
-

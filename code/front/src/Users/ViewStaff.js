@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {Link, useParams} from 'react-router-dom';
 import axios from 'axios';
+import api from '../api';
 
-{/*these are Comments*/}
 
 export default function ViewStaff() {
 
@@ -15,17 +15,13 @@ export default function ViewStaff() {
     
     const {id}=useParams(); 
 
-    {/*display the loadstaff data */}
     useEffect(() => {
         loadStaff()
-    }, []); 
+    }, []);
 
-    {/*use axio for getMapping of variable id */}
-    {/*set the user to the new data only -> react detects new 'user' -> render new data */}
     const loadStaff = async ()=>{
-        const result = await axios.get(`http://localhost:8082/employee/${id}`);                       {/*getMapping for 1 staff*/}
-        setUsers(result.data); 
-      };
+        const result = await api.get(`/employee/${id}`);
+    };
 
 
   return (
@@ -56,7 +52,7 @@ export default function ViewStaff() {
                 </ul>
             </div>
         </div>
-        <Link className='btn btn-primary my-2' to={'/'}> {/*add a back to home link button*/}
+        <Link className='btn btn-primary my-2' to={'/home'}>
             Back to Home
         </Link>
 

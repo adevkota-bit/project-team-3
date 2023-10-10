@@ -1,43 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {Link, useParams} from "react-router-dom"; 
+import {Link, useParams} from "react-router-dom";
+import Navbar from '../Layout/Navbar';
+import api from '../api';
 
-{/*these are Comments*/}
 
 
 export default function HomePage_Manager() {
 
-    {/*use id as variable*/}
-    const{id} = useParams(); 
+    const{id} = useParams();
 
     const[users, setUsers] = useState([])
 
-    {/*load data onto page*/}
     useEffect(() =>{
         loadStaff(); 
     },[])
 
-    {/*use axio to get getMapping of all employee*/}
-    {/*set the users to new data*/}
+
     const loadStaff = async() =>{
-        const result = await axios.get("http://localhost:8082/allemployee");              {/*getMapping for all staff */}
-        setUsers(result.data); 
-    }; 
+        try {
+            const result = await api.get("/allemployee");
+            setUsers(result.data);
+        } catch (error) {
+            console.log("error from homepage_manager");
+        }
+    };
 
-    {/*use axio to get deletMapping with id variable*/}
     const deleteUser = async(id)=>{
-      await axios.delete(`http://localhost:8082/${id}`);                                  {/*deleteMapping for 1 staff*/}
-      loadStaff(); 
-    }; 
+        try {
+            await api.delete(`/${id}`);
+            loadStaff();
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
 
-  return (
-    <div className='container'>       {/*make a container*/}
+    return (
+    <div className='container'>
 
         <div className='py-4'>
-        <table className="table border shadow"> {/*make table inside the container*/}
+        <table className="table border shadow">
   <thead>
-    <tr>              {/*colum names inside the table*/}
+    <tr>
       <th scope="col">#</th>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
@@ -47,7 +52,6 @@ export default function HomePage_Manager() {
   </thead>
   <tbody>
 
-    {/*mape each staff object to each row*/}
         {users.map((user, index) => (
             <tr>
             <th scope="row" key={index}> {index+1} </th>
@@ -56,8 +60,6 @@ export default function HomePage_Manager() {
             <td>{user.jobTitle}</td>
             <td>${user.annualSalary}</td>
 
-            {/*action buttons*/}
-            {/*each button links to each different url with variable id -> App.js takes care of each route*/}
             <td>
                 <Link className='btn btn-primary mx-2'
                 to={`/viewstaff/${user.id}`}>

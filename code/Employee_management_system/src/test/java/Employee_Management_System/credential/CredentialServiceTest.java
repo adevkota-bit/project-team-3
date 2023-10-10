@@ -7,10 +7,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class CredentialServiceTest {
 
     @Test
-    void createAccount() {
+    void register() {
     }
 
     @Test
-    void login() {
+    void authenticate() {
     }
 }

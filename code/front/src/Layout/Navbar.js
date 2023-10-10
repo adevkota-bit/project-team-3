@@ -1,15 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 
-
-//code for top nagivation bar
-{/*these are Comments*/}
 
 export default function Navbar() {
+
+  let navigate = useNavigate();
+
+  function logOut(){
+    localStorage.clear();
+    console.log(localStorage);
+    console.log("localstorage is clear");
+    navigate('/login');
+  }
+
   return (
     <div>
 
-      {/*logo link button  */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container-fluid">
           <Link className="navbar-brand" to={'/'}>
@@ -27,13 +33,14 @@ export default function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-        {/*button link to 'Add staff' */}
-        {/*clicking on it will lead to url/addStaff -> which will allows App.js to route to AddStaff.js page */}
-          <Link className="btn btn-outline-light" to="/addStaff">   
+          <Link className="btn btn-outline-light" to="/addStaff">
             Add Staff
           </Link>
 
-
+          <button className="btn btn-outline-light"
+            onClick={()=>logOut()}>
+            Log Out
+          </button>
 
 
         </div>

@@ -18,11 +18,11 @@ FrontEnd is built using React.js.
 
 ## How to Run
 
-1) cd to code/Employee_management_system/src/main/java/Employee_management_system. 
-2) Run EmsV1Application. This will start the application. 
-3) cd to code/front. 
-4) Run "npm start". Please ensure you have npm installed beforehand. (See code/front/README.md). 
-5) This will launch the user interface. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Please make sure you are using at least java 17. 
 
-Note: This is a temporary process to run the project and will be eventually replaced by Dockerizing both services.  
+1) cd to the project directory. 
+2) Run 'mvn clean install' or 'mvn package' to build the jar. 
+3) Run "docker-compose up" . This will build the containers for backend and frontend. 
+4) Open [http://localhost:3000](http://localhost:3000) to view the application in browser. 
+
 

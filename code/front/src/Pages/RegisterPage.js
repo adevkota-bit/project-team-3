@@ -26,8 +26,10 @@ function AddStaff() {
 
     const onSubmit= async(e) => {
         e.preventDefault();
-        await api.post("/", user);
-        navigate('/home');
+
+        await axios.post("http://localhost:8082/api/v1/auth/signup", user);
+        //await api.post("/", user);
+        navigate('/login');
     };
 
     return (

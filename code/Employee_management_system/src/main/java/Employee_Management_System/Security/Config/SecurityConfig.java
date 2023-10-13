@@ -11,6 +11,10 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import static Employee_Management_System.credential.Role.ADMIN;
+import static Employee_Management_System.credential.Role.STAFF;
+import static org.springframework.http.HttpMethod.*;
+
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -34,9 +38,19 @@ public class SecurityConfig {
                         "/*.ico")
 
                 .permitAll()
-                //.requestMatchers( "/api/v1/auth/**").hasAnyRole(Role.USER.name())
-                //.requestMatchers(POST, "/api/v1/auth/**").hasAnyAuthority(Role.USER.name())
+                .requestMatchers("/admin/**").hasAnyRole(ADMIN.name())
+                .requestMatchers(GET, "/admin/**").hasAnyAuthority(ADMIN.name())
+                .requestMatchers(POST, "/admin/**").hasAnyAuthority(ADMIN.name())
+                .requestMatchers(PUT, "/admin/**").hasAnyAuthority(ADMIN.name())
+                .requestMatchers(DELETE, "/admin/**").hasAnyAuthority(ADMIN.name())
 
+                .requestMatchers("/staff").hasAnyRole(ADMIN.name(), STAFF.name())
+                .requestMatchers(GET, "/staff/**").hasAnyAuthority(ADMIN.name(), STAFF.name())
+                .requestMatchers(POST, "/staff/**").hasAnyAuthority(ADMIN.name(), STAFF.name())
+                .requestMatchers(PUT, "/staff/**").hasAnyAuthority(ADMIN.name(), STAFF.name())
+                .requestMatchers(DELETE, "/staff/**").hasAnyAuthority(ADMIN.name(), STAFF.name())
+
+                //.requestMatchers()
                 .anyRequest()
                 .authenticated()
                 .and()

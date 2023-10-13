@@ -9,15 +9,16 @@ import java.util.Optional;
 import Exception.ResourceNotFoundException;
 
 @RestController
+@RequestMapping("/admin")
 @CrossOrigin("http://localhost:3000")
-public class EmployeeController {
+public class AdminController {
     @Autowired
     private EmployeeService employeeService;
 
-    @Autowired
-    public EmployeeController(EmployeeService employeeService) {
-        this.employeeService = employeeService;
-    }
+//    @Autowired
+//    public AdminController(EmployeeService employeeService) {
+//        this.employeeService = employeeService;
+//    }
 
     @GetMapping("/allemployee")
     public List<Employee> getAllEmployee(){

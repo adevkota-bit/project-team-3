@@ -30,9 +30,9 @@ public class EmsV1Application {
 					.lastname("Admin1")
 					.username("user1")
 					.password("password")
-					.role(Role.USER)
+					.role(Role.STAFF)
 					.build();
-			System.out.println("Admin1 token: " + service.register(admin).getAccessToken());
+			System.out.println("staff token: " + service.register(admin).getAccessToken());
 
 			var manager = RegisterRequest.builder()
 					.firstname("Admin2")

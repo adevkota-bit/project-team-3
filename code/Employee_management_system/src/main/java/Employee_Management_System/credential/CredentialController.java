@@ -25,6 +25,8 @@ public class CredentialController {
         return ResponseEntity.ok(service.register(request));
     }
 
+
+
     @PostMapping("/signin")
     public ResponseEntity<AuthenticationResponse> authenticate(
             @RequestBody AuthenticationRequest request

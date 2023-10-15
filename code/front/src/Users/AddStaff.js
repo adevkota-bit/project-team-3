@@ -30,7 +30,7 @@ function AddStaff() {
 
   const onSubmit= async(e) => {
     e.preventDefault();
-    await api.post("/admin/", user);
+    await api.post("/admin", user);
     navigate('/home');
   };
 

@@ -27,6 +27,8 @@ public class EmsV1Application {
 
 	) {
 		return args -> {
+
+			//STAFF ROLE - Jack
 			var admin = RegisterRequest.builder()
 					.firstname("jack")
 					.lastname("staff")
@@ -36,6 +38,7 @@ public class EmsV1Application {
 					.build();
 			System.out.println("staff token: " + service.register(admin).getAccessToken());
 
+			//ADMIN ROLE - JOHN
 			var manager = RegisterRequest.builder()
 					.firstname("john")
 					.lastname("admin")
@@ -49,8 +52,7 @@ public class EmsV1Application {
 			System.out.println("request made..............");
 			service.authenticate(request);
 
-
-
+			//EMPLOYEE INFORMATION
 			var employee1 = Employee.builder()
 					.name("john")
 					.jobTitle("teacher")

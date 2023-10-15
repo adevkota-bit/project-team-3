@@ -1,8 +1,13 @@
 package Employee_Management_System.credential;
 
+import Employee_Management_System.Security.Service.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.web.DefaultRedirectStrategy;
+import org.springframework.security.web.RedirectStrategy;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/auth")
@@ -11,21 +16,44 @@ import org.springframework.web.bind.annotation.*;
 public class CredentialController {
 
     private final CredentialService service;
+    private final JwtService jwtService;
 
     @PostMapping("/signup")
-    public ResponseEntity<Employee_Management_System.Credential.AuthenticationResponse> register(
+    public ResponseEntity<AuthenticationResponse> register(
             @RequestBody RegisterRequest request
     ) {
         return ResponseEntity.ok(service.register(request));
     }
 
-
     @PostMapping("/signin")
-    public ResponseEntity<Employee_Management_System.Credential.AuthenticationResponse> authenticate(
-            @RequestBody Employee_Management_System.Credential.AuthenticationRequest request
+    public ResponseEntity<AuthenticationResponse> authenticate(
+            @RequestBody AuthenticationRequest request
     ) {
+
+        //RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
+
         return ResponseEntity.ok(service.authenticate(request));
     }
+
+    @PostMapping("/getrole")
+        public ResponseEntity<String> getRole(
+                @RequestBody AuthenticationRequest request
+    ){
+        String username = request.getUsername();
+        Optional<Credential> credential = service.loadUserByUsername(username);
+
+        return ResponseEntity.ok(credential.get().getRole().name());
+
+    }
+
+//    @PostMapping("/role")
+//    public String getRole(@RequestBody String token){
+//        String username = jwtService.extractUsername(token);
+//        Optional<Credential> credential = service.loadUserByUsername(username);
+//
+//        return credential.get().getRole().name();
+//
+//    }
 
 //    @GetMapping("/test")
 //    public ResponseEntity<String> test(){

@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import static Employee_Management_System.credential.Role.ADMIN;
@@ -22,6 +23,8 @@ public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
+
+    private final LoginSuccessHandler loginSuccessHandler;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -38,26 +41,27 @@ public class SecurityConfig {
                         "/*.ico")
 
                 .permitAll()
-                .requestMatchers("/admin/**").hasAnyRole(ADMIN.name())
-                .requestMatchers(GET, "/admin/**").hasAnyAuthority(ADMIN.name())
-                .requestMatchers(POST, "/admin/**").hasAnyAuthority(ADMIN.name())
-                .requestMatchers(PUT, "/admin/**").hasAnyAuthority(ADMIN.name())
-                .requestMatchers(DELETE, "/admin/**").hasAnyAuthority(ADMIN.name())
+                .requestMatchers("/admin/**").hasRole(ADMIN.name())
+                .requestMatchers(GET, "/admin/**").hasAuthority(ADMIN.name())
+                .requestMatchers(POST, "/admin/**").hasAuthority(ADMIN.name())
+                .requestMatchers(PUT, "/admin/**").hasAuthority(ADMIN.name())
+                .requestMatchers(DELETE, "/admin/**").hasAuthority(ADMIN.name())
 
-                .requestMatchers("/staff").hasAnyRole(ADMIN.name(), STAFF.name())
+                .requestMatchers("/staff/**").hasAnyRole(ADMIN.name(), STAFF.name())
                 .requestMatchers(GET, "/staff/**").hasAnyAuthority(ADMIN.name(), STAFF.name())
                 .requestMatchers(POST, "/staff/**").hasAnyAuthority(ADMIN.name(), STAFF.name())
                 .requestMatchers(PUT, "/staff/**").hasAnyAuthority(ADMIN.name(), STAFF.name())
                 .requestMatchers(DELETE, "/staff/**").hasAnyAuthority(ADMIN.name(), STAFF.name())
 
-                //.requestMatchers()
                 .anyRequest()
                 .authenticated()
                 .and()
-                .formLogin().loginPage("/index.html")
-                .loginProcessingUrl("/perform_login")
-                .defaultSuccessUrl("/homepage.html", true)
-                .failureUrl("/index.html?error=true")
+                .formLogin()
+                .loginPage("/login")
+                //.loginProcessingUrl("/login")
+                .successHandler(loginSuccessHandler)
+                //.permitAll()
+                //.failureUrl("/index.html?error=true")
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

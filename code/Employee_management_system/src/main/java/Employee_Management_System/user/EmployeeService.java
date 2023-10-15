@@ -1,5 +1,8 @@
 package Employee_Management_System.user;
 
+import Employee_Management_System.credential.Credential;
+import Employee_Management_System.credential.CredentialRepository;
+import Employee_Management_System.credential.CredentialService;
 import Employee_Management_System.user.Employee;
 import Employee_Management_System.user.EmployeeRepository;
 import jakarta.transaction.Transactional;
@@ -15,10 +18,9 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    public EmployeeService(EmployeeRepository employeeRepository) {
+    @Autowired
+    private CredentialRepository credentialRepository;
 
-        this.employeeRepository = employeeRepository;
-    }
 
     public List<Employee> getAllEmployee() {
 
@@ -59,5 +61,11 @@ public class EmployeeService {
     public Employee save(Employee employee) {
         employeeRepository.save(employee);
         return employee;
+    }
+
+    public Optional<Employee> getEmployeeByUsername(String username){
+        Optional<Credential> cred = credentialRepository.findByUsername(username);
+        String name = cred.get().getFirstname();
+        return employeeRepository.findEmployeeByName(name);
     }
 }

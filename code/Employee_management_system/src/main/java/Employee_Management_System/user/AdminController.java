@@ -20,7 +20,9 @@ public class AdminController {
 //        this.employeeService = employeeService;
 //    }
 
-    @GetMapping("/allemployee")
+
+    @GetMapping(path = "/allemployee")
+    //@GetMapping
     public List<Employee> getAllEmployee(){
         return employeeService.getAllEmployee();
     }
@@ -46,6 +48,7 @@ public class AdminController {
     @GetMapping("/employee/{id}")
     public Optional<Employee> getEmployeeById(@PathVariable Long id ){
        var employee = employeeService.getEmployeeById(id);
+
        if (employee.isPresent()){
            return employee;
        }else{

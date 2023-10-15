@@ -1,22 +1,29 @@
 package Employee_Management_System.credential;
 
 
+import Employee_Management_System.credential.AuthenticationRequest;
+import Employee_Management_System.credential.AuthenticationResponse;
 import Employee_Management_System.Security.Service.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
-public class CredentialService  {
+public class CredentialService{
     private final CredentialRepository repository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
-    public Employee_Management_System.Credential.AuthenticationResponse register(RegisterRequest request) {
+    public AuthenticationResponse register(RegisterRequest request) {
         var user = Credential.builder()
                 .firstname(request.getFirstname())
                 .lastname(request.getLastname())
@@ -26,12 +33,12 @@ public class CredentialService  {
                 .build();
         repository.save(user);
         var jwtToken = jwtService.generateToken(user);
-        return Employee_Management_System.Credential.AuthenticationResponse.builder()
+        return AuthenticationResponse.builder()
                 .accessToken(jwtToken)
                 .build();
     }
 
-    public Employee_Management_System.Credential.AuthenticationResponse authenticate(Employee_Management_System.Credential.AuthenticationRequest request) {
+    public AuthenticationResponse authenticate(AuthenticationRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.getUsername(),
@@ -40,11 +47,21 @@ public class CredentialService  {
         );
         var user = repository.findByUsername(request.getUsername())
                 .orElseThrow();
+
         var jwtToken = jwtService.generateToken(user);
 
-        return Employee_Management_System.Credential.AuthenticationResponse.builder()
+        return AuthenticationResponse.builder()
                 .accessToken(jwtToken)
                 .build();
     }
 
+    public Optional<Credential> loadUserByUsername(String username) throws UsernameNotFoundException {
+        return repository.findByUsername(username);
+
+    }
+
+//    @Override
+//    public Optional<Credential> loadUserByUsername(String username) throws UsernameNotFoundException {
+//        return repository.findByUsername(username);
+//    }
 }

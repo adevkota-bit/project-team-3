@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import Navbar_2 from '../Layout/Navbar_2';
 
 
 export default function LoginPage() {
@@ -23,8 +24,22 @@ export default function LoginPage() {
             const response = await axios.post("http://localhost:8082/api/v1/auth/signin", user);
             const  token  = response.data;
 
+            const roleResponse = await axios.post("http://localhost:8082/api/v1/auth/getrole", user);
+            const role = roleResponse.data;
+
             localStorage.setItem('access_token', token.access_token);
-            navigate('/home');
+            localStorage.setItem('username', user.username);
+            // console.log("login");
+            // console.log(role);
+            // console.log(localStorage);
+
+            if(role === "ADMIN"){
+                return navigate('/home')
+            }
+
+            if(role === "STAFF"){
+                return navigate('/staff')
+            }
 
         } catch (error) {
             console.log("error from loginPage")
@@ -34,6 +49,8 @@ export default function LoginPage() {
     return (
 
         <div className='container'>
+
+            <Navbar_2 />
             <div className='row'>
                 <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
                     <h2 className='text-center m-4'> HRMasery Login</h2>

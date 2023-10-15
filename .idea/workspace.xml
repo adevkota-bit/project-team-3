@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="733109ea-9c3a-4133-9c0f-d5c2e316ab3e" name="Changes" comment="Frontend-Backend-database-securit-rolebase_V1" />
+    <list default="true" id="733109ea-9c3a-4133-9c0f-d5c2e316ab3e" name="Changes" comment="Frontend-Backend-database-securit-rolebase_V1">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/Employee_management_system/src/main/java/Employee_Management_System/LeaveRequest/ApprovalRejectionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/Employee_management_system/src/main/java/Employee_Management_System/LeaveRequest/LeaveRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/Employee_management_system/src/main/java/Employee_Management_System/LeaveRequest/LeaveRequestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/Employee_management_system/src/main/java/Employee_Management_System/LeaveRequest/LeaveRequestRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/Employee_management_system/src/main/java/Employee_Management_System/LeaveRequest/LeaveRequestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/Employee_management_system/src/test/java/Employee_Management_System/leaveRequestTest/leaveRequest/LeaveRequestServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_13_23__5_53_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_13_23__5_53_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="docker_setup_v2" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -88,7 +101,9 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Great/Desktop/673/v3/code/Employee_management_system/src/test/java/Employee_Management_System",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -106,6 +121,10 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Great\Desktop\673\v3\code\Employee_management_system\src\test\java\Employee_Management_System" />
+      <recent name="C:\Users\Great\Desktop\673\v3\code\Employee_management_system\src\main\java\Employee_Management_System" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Employee_Management_System.Security.Config" />
       <recent name="Employee_Management_System.Security" />
@@ -113,7 +132,7 @@
       <recent name="Employee_Management_System.Security.Filter" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.EmsV1Application">
+  <component name="RunManager" selected="JUnit.CredentialServiceTest">
     <configuration name="CredentialServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="employee-management-system" />
       <extension name="coverage">
@@ -179,10 +198,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CredentialServiceTest" />
-        <item itemvalue="Jest.ViewStaff.test.js" />
-        <item itemvalue="Jest.HomePageManager.test.js" />
-        <item itemvalue="Jest.EditStaff.test.js" />
-        <item itemvalue="Jest.AddStaff.test.js" />
       </list>
     </recent_temporary>
   </component>

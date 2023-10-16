@@ -1,7 +1,5 @@
 package Employee_Management_System.user;
 
-import Employee_Management_System.user.Employee;
-import Employee_Management_System.user.EmployeeRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

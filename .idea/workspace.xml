@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="733109ea-9c3a-4133-9c0f-d5c2e316ab3e" name="Changes" comment="Frontend-Backend-database-securit-rolebase_V1">
+      <change beforePath="$PROJECT_DIR$/code/Employee_management_system/src/test/java/Employee_Management_System/user/EmployeeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/Employee_management_system/src/test/java/Employee_Management_System/user/EmployeeServiceTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="docker_postgres_setup" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="docker_setup_v3" />
+                    <option name="lastUsedInstant" value="1697242236" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="docker_setup_v2" />
+                    <option name="lastUsedInstant" value="1697234058" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="docker_setup" />
+                    <option name="lastUsedInstant" value="1696814897" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="database-frontend-backend_my3rdSec" />
+                    <option name="lastUsedInstant" value="1696803387" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1696803386" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2WV2FET3r9YefZ3gi0A06OdgdvI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Great/Desktop/673/v3/code/Employee_management_system/src/test/java/Employee_Management_System&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/Users/jxie5/Desktop/BOSTON_U/CS673_Software_Engineering/V5/code/front/node_modules/react-scripts&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;0f19f047a85dc674193d6fb44dd0b5d7&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Great\Desktop\673\v3\code\Employee_management_system\src\test\java\Employee_Management_System" />
+      <recent name="C:\Users\Great\Desktop\673\v3\code\Employee_management_system\src\main\java\Employee_Management_System" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/code/Employee_management_system/src/main/resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Employee_Management_System.Security.Config" />
+      <recent name="Employee_Management_System.Security" />
+      <recent name="Employee_Management_System.Security.Service" />
+      <recent name="Employee_Management_System.Security.Filter" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.EmployeeServiceTest">
+    <configuration name="CredentialServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="employee-management-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Employee_Management_System.credential.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Employee_Management_System.credential" />
+      <option name="MAIN_CLASS_NAME" value="Employee_Management_System.credential.CredentialServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="employee-management-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Employee_Management_System.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Employee_Management_System.user" />
+      <option name="MAIN_CLASS_NAME" value="Employee_Management_System.user.EmployeeServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LeaveRequestServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="employee-management-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Employee_Management_System.leaveRequestTest.leaveRequest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Employee_Management_System.leaveRequestTest.leaveRequest" />
+      <option name="MAIN_CLASS_NAME" value="Employee_Management_System.leaveRequestTest.leaveRequest.LeaveRequestServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LeaveRequestServiceTest.testAddLeaveRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="employee-management-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Employee_Management_System.leaveRequestTest.leaveRequest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Employee_Management_System.leaveRequestTest.leaveRequest" />
+      <option name="MAIN_CLASS_NAME" value="Employee_Management_System.leaveRequestTest.leaveRequest.LeaveRequestServiceTest" />
+      <option name="METHOD_NAME" value="testAddLeaveRequest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ViewStaff.test.js" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/code/front/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$/code/front" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/code/front/src/ViewStaff.test.js" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmsV1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="employee-management-system" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Employee_Management_System.EmsV1Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.LeaveRequestServiceTest.testAddLeaveRequest" />
+        <item itemvalue="JUnit.LeaveRequestServiceTest" />
+        <item itemvalue="JUnit.EmployeeServiceTest" />
+        <item itemvalue="JUnit.CredentialServiceTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="733109ea-9c3a-4133-9c0f-d5c2e316ab3e" name="Changes" comment="" />
+      <created>1696803321362</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696803321362</updated>
+      <workItem from="1696803326217" duration="11721000" />
+      <workItem from="1696862883266" duration="21701000" />
+      <workItem from="1697232574412" duration="25576000" />
+    </task>
+    <task id="LOCAL-00001" summary="Frontend-Backend-database-security">
+      <created>1696814874236</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696814874236</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Frontend-Backend-database-security">
+      <created>1696859118993</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696859118993</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Frontend-Backend-database-security">
+      <created>1696859911102</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696859911102</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Frontend-Backend-database-security">
+      <created>1696859923583</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696859923583</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Frontend-Backend-database-security">
+      <created>1696860059518</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696860059518</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Frontend-Backend-database-security_2">
+      <created>1696880117656</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696880117657</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Frontend-Backend-database-security_2">
+      <created>1696900372958</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696900372958</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Frontend-Backend-database-securit-rolebase">
+      <created>1697231450771</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1697231450771</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Frontend-Backend-database-securit-rolebase_V1">
+      <created>1697339001966</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1697339001966</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Frontend-Backend-database-security" />
+    <MESSAGE value="Frontend-Backend-database-security_2" />
+    <MESSAGE value="Frontend-Backend-database-securit-rolebase" />
+    <MESSAGE value="Frontend-Backend-database-securit-rolebase_V1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Frontend-Backend-database-securit-rolebase_V1" />
+  </component>
+</project>

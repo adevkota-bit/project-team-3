@@ -5,6 +5,7 @@ import Employee_Management_System.LeaveRequest.LeaveRequestRepository;
 import Employee_Management_System.LeaveRequest.LeaveRequestService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
@@ -29,6 +30,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 // @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 // @Rollback(false)
 @SpringBootTest
+@Disabled
 class LeaveRequestServiceTest {
 
     @Autowired

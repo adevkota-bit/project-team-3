@@ -22,8 +22,9 @@ Please make sure you are using at least java 17.
 
 1) cd to the project directory.
 2) Run 'mvn clean install' or 'mvn package' to build the jar.
-3) Run "docker-compose up" . This will build the containers for backend and frontend.
+3) Run "docker-compose up -d" . This will build the containers for backend and frontend.
 4) Open [http://localhost:3000/login](http://localhost:3000/login) to view the application in browser.
+5) Run "docker-compose down" to stop the containers. 
 
 ## Helpful docker commands
 

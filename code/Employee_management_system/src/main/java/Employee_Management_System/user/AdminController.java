@@ -9,17 +9,20 @@ import java.util.Optional;
 import Exception.ResourceNotFoundException;
 
 @RestController
+@RequestMapping("/admin")
 @CrossOrigin("http://localhost:3000")
-public class EmployeeController {
+public class AdminController {
     @Autowired
     private EmployeeService employeeService;
 
-    @Autowired
-    public EmployeeController(EmployeeService employeeService) {
-        this.employeeService = employeeService;
-    }
+//    @Autowired
+//    public AdminController(EmployeeService employeeService) {
+//        this.employeeService = employeeService;
+//    }
 
-    @GetMapping("/allemployee")
+
+    @GetMapping(path = "/allemployee")
+    //@GetMapping
     public List<Employee> getAllEmployee(){
         return employeeService.getAllEmployee();
     }
@@ -45,6 +48,7 @@ public class EmployeeController {
     @GetMapping("/employee/{id}")
     public Optional<Employee> getEmployeeById(@PathVariable Long id ){
        var employee = employeeService.getEmployeeById(id);
+
        if (employee.isPresent()){
            return employee;
        }else{

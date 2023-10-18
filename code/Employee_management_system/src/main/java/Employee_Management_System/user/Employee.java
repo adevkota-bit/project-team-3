@@ -1,10 +1,7 @@
 package Employee_Management_System.user;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "employees_info")
@@ -35,13 +32,15 @@ public class Employee {
     @Column(name = "annualSalary")
     private Double annualSalary;
 
+
     // constructor
     public Employee(Integer id,
                     String name,
                     String email,
                     String phoneNumber,
                     String jobTitle,
-                    Double annualSalary) {
+                    Double annualSalary
+                    ) {
 
         this.id = id;
         this.name = name;

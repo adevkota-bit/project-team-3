@@ -1,5 +1,6 @@
 
 package Employee_Management_System;
+import Employee_Management_System.credential.AuthenticationRequest;
 import Employee_Management_System.credential.CredentialService;
 import Employee_Management_System.credential.RegisterRequest;
 import Employee_Management_System.credential.Role;
@@ -23,26 +24,35 @@ public class EmsV1Application {
 	public CommandLineRunner commandLineRunner(
 			CredentialService service,
 			EmployeeRepository employeeRepo
+
 	) {
 		return args -> {
+
+			//STAFF ROLE - Jack
 			var admin = RegisterRequest.builder()
-					.firstname("Admin1")
-					.lastname("Admin1")
+					.firstname("jack")
+					.lastname("staff")
 					.username("user1")
 					.password("password")
-					.role(Role.USER)
+					.role(Role.STAFF)
 					.build();
-			System.out.println("Admin1 token: " + service.register(admin).getAccessToken());
+			System.out.println("staff token: " + service.register(admin).getAccessToken());
 
+			//ADMIN ROLE - JOHN
 			var manager = RegisterRequest.builder()
-					.firstname("Admin2")
-					.lastname("Admin2")
+					.firstname("john")
+					.lastname("admin")
 					.username("user2")
 					.password("password")
 					.role(Role.ADMIN)
 					.build();
 			System.out.println("Manager1 token: " + service.register(manager).getAccessToken());
 
+			AuthenticationRequest request = new AuthenticationRequest("user2", "password");
+			System.out.println("request made..............");
+			service.authenticate(request);
+
+			//EMPLOYEE INFORMATION
 			var employee1 = Employee.builder()
 					.name("john")
 					.jobTitle("teacher")

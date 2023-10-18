@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {Link, useParams} from 'react-router-dom';
 import axios from 'axios';
 import api from '../api';
+import Navbar_2 from '../Layout/Navbar_2';
 
 
 export default function ViewStaff() {
@@ -12,15 +13,14 @@ export default function ViewStaff() {
         annualSalary:""
     });
 
-
-    const {id}=useParams();
+    const username=localStorage.getItem('username');
 
     useEffect(() => {
         loadStaff()
     }, []);
 
     const loadStaff = async ()=>{
-        const result = await api.get(`/admin/employee/${id}`);
+        const result = await api.post(`/staff/${username}`);
         setUsers(result.data);
     };
 
@@ -28,10 +28,10 @@ export default function ViewStaff() {
     return (
 
         <div className='container'>
+            <Navbar_2 />
             <div className='row'>
                 <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
                     <h2 className='text-center m-4'>Staff Details</h2>
-
                     <div className='card'>
                         <div className='card-header'>
                             Detail of user id:{user.id}
@@ -53,10 +53,6 @@ export default function ViewStaff() {
                             </ul>
                         </div>
                     </div>
-                    <Link className='btn btn-primary my-2' to={'/home'}>
-                        Back to Home
-                    </Link>
-
                 </div>
             </div>
         </div>

@@ -23,7 +23,7 @@ public class Credential implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private String id;
     private String firstname;
     private String lastname;
     private String username;

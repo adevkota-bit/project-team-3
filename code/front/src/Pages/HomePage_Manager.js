@@ -46,7 +46,6 @@ export default function HomePage_Manager() {
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Job Title</th>
                         <th scope="col">Annual Salary</th>
@@ -57,7 +56,6 @@ export default function HomePage_Manager() {
                     {users.map((user, index) => (
                         <tr>
                             <th scope="row" key={index}> {index+1} </th>
-                            <td>{user.id}</td>
                             <td>{user.name}</td>
                             <td>{user.jobTitle}</td>
                             <td>${user.annualSalary}</td>

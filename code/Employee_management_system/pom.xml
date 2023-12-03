@@ -130,6 +130,12 @@
 			<version>6.1.2</version>
 			<scope>compile</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>at.favre.lib</groupId>
+			<artifactId>id-mask</artifactId>
+			<version>0.6.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

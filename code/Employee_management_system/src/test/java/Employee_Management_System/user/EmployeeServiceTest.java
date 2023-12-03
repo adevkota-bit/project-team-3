@@ -150,7 +150,7 @@ class EmployeeServiceTest {
     // test cases for deletingEmployeeByID
     @Test
     void deleteEmployeeNull() {
-        Integer userId = 1;
+        String userId = "1";
         employeeRepository.deleteById(userId);
         Optional<Employee> employee = employeeRepository.findEmployeeById(userId);
         Assertions.assertThat(employee).isNotPresent();
@@ -164,7 +164,7 @@ class EmployeeServiceTest {
         employeeRepository.save(employee1);
         employeeRepository.save(employee2);
 
-        Integer userId = 2;
+        String userId = "2";
         employeeRepository.deleteById(userId);
         Optional<Employee> employee = employeeRepository.findEmployeeById(userId);
         Assertions.assertThat(employee).isNotPresent(); // need to change
@@ -174,7 +174,7 @@ class EmployeeServiceTest {
 
     @Test
     void updateEmployeeNameNullUserID() {
-        Integer userId = 1;
+        String userId = "1";
         if (employeeRepository.findEmployeeById(userId).isPresent()){
             Employee optionalEmployee = employeeRepository.findEmployeeById(userId).get();
             optionalEmployee.setName("John");
@@ -189,8 +189,8 @@ class EmployeeServiceTest {
 
     @Test
     void updateEmployeeName() {
-        UUID uuid1 = UUID.randomUUID();
-        UUID uuid2 = UUID.randomUUID();
+        String uuid1 = UUID.randomUUID().toString();
+        String uuid2 = UUID.randomUUID().toString();
         Employee employee1 = Employee.builder().name("Alex").id(uuid1).email("alex.stevenson@gmail.com").annualSalary(25642.2).jobTitle("employee")
                 .build();
         // add into database
@@ -218,7 +218,7 @@ class EmployeeServiceTest {
         employeeRepository.save(employee7);
         employeeRepository.save(employee8);
 
-        Integer userId = 8;
+        String userId = "8";
         Employee optionalEmployee = employeeRepository.findEmployeeById(userId).get();
         optionalEmployee.setName("John");
         employeeRepository.save(optionalEmployee);
@@ -229,11 +229,11 @@ class EmployeeServiceTest {
 
     @Test
     void updateEmployeeNameNullName() {
-        UUID uuid = UUID.randomUUID();
+        String uuid = UUID.randomUUID().toString();
         Employee employee = Employee.builder().email("alex.stevenson@gmail.com").id(uuid).annualSalary(12000.56).jobTitle("manager")
                 .build();
         Employee savedEmployee = employeeRepository.save(employee);
-        Integer userId = 1;
+        String userId = "1";
         if (employeeRepository.findEmployeeById(userId).isPresent()){
             Employee optionalEmployee = employeeRepository.findEmployeeById(userId).get();
             if (optionalEmployee.getName()!=null){

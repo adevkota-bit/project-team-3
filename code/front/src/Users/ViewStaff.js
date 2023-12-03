@@ -34,7 +34,7 @@ export default function ViewStaff() {
 
                     <div className='card'>
                         <div className='card-header'>
-                            Detail of user id:{user.id}
+                            Detail of user:
                             <ul className='list-group list-group-flush'>
                                 <li className='list-group-item'>
                                     <b>Name: </b>

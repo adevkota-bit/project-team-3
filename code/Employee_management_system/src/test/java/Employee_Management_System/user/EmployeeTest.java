@@ -24,7 +24,7 @@ class EmployeeTest {
 
     @Test
     void testGetId() {
-        UUID uuid = UUID.randomUUID();
+        String uuid = UUID.randomUUID().toString();
         employee.setId(uuid);
         assertEquals(uuid, employee.getId());
     }

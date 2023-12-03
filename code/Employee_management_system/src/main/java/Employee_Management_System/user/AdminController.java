@@ -3,10 +3,10 @@ package Employee_Management_System.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import Exception.ResourceNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
-import Exception.ResourceNotFoundException;
 
 @RestController
 @RequestMapping("/admin")
@@ -33,20 +33,20 @@ public class AdminController {
     }
 
     @DeleteMapping(path = "{employeeID}")
-    public void deleteEmployee(@PathVariable Integer employeeID){
+    public void deleteEmployee(@PathVariable String employeeID){
         employeeService.deleteEmployeeById(employeeID);
     }
 
     @PutMapping("{employeeId}")
     public void updateEmployeeName(
-            @PathVariable Integer employeeId,
+            @PathVariable String employeeId,
             @RequestParam(required = false) String name
     ){
         employeeService.updateEmployeeName(employeeId, name);
     }
 
     @GetMapping("/employee/{id}")
-    public Optional<Employee> getEmployeeById(@PathVariable Long id ){
+    public Optional<Employee> getEmployeeById(@PathVariable String id ){
        var employee = employeeService.getEmployeeById(id);
 
        if (employee.isPresent()){
@@ -58,7 +58,7 @@ public class AdminController {
 
 
     @PutMapping("/employee/{id}")
-    public Optional<Employee> updateEmployeeJobTitle(@RequestBody Employee newEmployee, @PathVariable Long id) throws Exception {
+    public Optional<Employee> updateEmployeeJobTitle(@RequestBody Employee newEmployee, @PathVariable String id) throws Exception {
 
         return Optional.ofNullable(employeeService.getEmployeeById(id)
                 .map(employee -> {

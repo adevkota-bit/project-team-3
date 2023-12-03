@@ -4,6 +4,10 @@ package Employee_Management_System.credential;
 import Employee_Management_System.credential.AuthenticationRequest;
 import Employee_Management_System.credential.AuthenticationResponse;
 import Employee_Management_System.Security.Service.JwtService;
+import at.favre.lib.bytes.Bytes;
+import at.favre.lib.idmask.Config;
+import at.favre.lib.idmask.IdMask;
+import at.favre.lib.idmask.IdMasks;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -24,9 +28,11 @@ public class CredentialService{
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
+
     public AuthenticationResponse register(RegisterRequest request) {
+        var id = UUID.randomUUID().toString();
         var user = Credential.builder()
-                .id(UUID.randomUUID())
+                .id(id)
                 .firstname(request.getFirstname())
                 .lastname(request.getLastname())
                 .username(request.getUsername())

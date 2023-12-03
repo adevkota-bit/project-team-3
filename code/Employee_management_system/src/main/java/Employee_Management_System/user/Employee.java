@@ -3,23 +3,16 @@ package Employee_Management_System.user;
 import jakarta.persistence.*;
 import lombok.Builder;
 
+import java.util.UUID;
+
 @Entity
 @Table(name = "employees_info")
 @Builder
 public class Employee {
 
     @Id
-//    @SequenceGenerator(
-//            name = "employee_sequence",
-//            sequenceName = "employee_sequence",
-//            allocationSize = 1
-//    )
-//    @GeneratedValue(
-//            strategy = GenerationType.SEQUENCE,
-//            generator = "employee_sequence"
-//    )
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     @Column(name = "name")
     private String name;
@@ -34,7 +27,7 @@ public class Employee {
 
 
     // constructor
-    public Employee(Integer id,
+    public Employee(UUID id,
                     String name,
                     String email,
                     String phoneNumber,
@@ -61,11 +54,11 @@ public class Employee {
         this.name = name;
     }
 
-    public Integer getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

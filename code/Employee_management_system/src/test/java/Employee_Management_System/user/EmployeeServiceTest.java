@@ -10,6 +10,7 @@ import org.springframework.test.annotation.Rollback;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -30,7 +31,7 @@ class EmployeeServiceTest {
         Employee savedEmployee = employeeRepository.save(employee);
 
         Assertions.assertThat(employee).isNotNull();
-        Assertions.assertThat(savedEmployee.getId()).isGreaterThan(0);
+        Assertions.assertThat(savedEmployee.getId()).isNotNull();
     }
     @Test
     public void testAddNewEmployeeNull() {
@@ -39,7 +40,7 @@ class EmployeeServiceTest {
         Employee savedEmployee = employeeRepository.save(employee);
 
         Assertions.assertThat(employee).isNotNull();
-        Assertions.assertThat(savedEmployee.getId()).isGreaterThan(0);
+        Assertions.assertThat(savedEmployee.getId()).isNotNull();
     }
     @Test
     public void testAddNewEmployeeMultipleFull() {
@@ -59,7 +60,7 @@ class EmployeeServiceTest {
         employeeRepository.save(employee4);
         Employee savedEmployee = employeeRepository.save(employee5);
         Assertions.assertThat(savedEmployee).isNotNull();
-        Assertions.assertThat(savedEmployee.getId()).isGreaterThan(0);
+        Assertions.assertThat(savedEmployee.getId()).isNotNull();
     }
 
     @Test
@@ -80,7 +81,7 @@ class EmployeeServiceTest {
         employeeRepository.save(employee4);
         Employee savedEmployee = employeeRepository.save(employee5);
         Assertions.assertThat(savedEmployee).isNotNull();
-        Assertions.assertThat(savedEmployee.getId()).isGreaterThan(0);
+        Assertions.assertThat(savedEmployee.getId()).isNotNull();
     }
 
     // test cases for getAllEmployee
@@ -188,10 +189,12 @@ class EmployeeServiceTest {
 
     @Test
     void updateEmployeeName() {
-        Employee employee1 = Employee.builder().name("Alex").id(1).email("alex.stevenson@gmail.com").annualSalary(25642.2).jobTitle("employee")
+        UUID uuid1 = UUID.randomUUID();
+        UUID uuid2 = UUID.randomUUID();
+        Employee employee1 = Employee.builder().name("Alex").id(uuid1).email("alex.stevenson@gmail.com").annualSalary(25642.2).jobTitle("employee")
                 .build();
         // add into database
-        Employee employee2 = Employee.builder().name("Amanda").id(2).email("alex.son@gmail.com").annualSalary(24000.56).jobTitle("manager")
+        Employee employee2 = Employee.builder().name("Amanda").id(uuid2).email("alex.son@gmail.com").annualSalary(24000.56).jobTitle("manager")
                 .build();
         Employee employee3 = Employee.builder().name("Narayan").email("Narayan@gmail.com").annualSalary(46152.2).jobTitle("employee")
                 .build();
@@ -226,7 +229,8 @@ class EmployeeServiceTest {
 
     @Test
     void updateEmployeeNameNullName() {
-        Employee employee = Employee.builder().email("alex.stevenson@gmail.com").id(123).annualSalary(12000.56).jobTitle("manager")
+        UUID uuid = UUID.randomUUID();
+        Employee employee = Employee.builder().email("alex.stevenson@gmail.com").id(uuid).annualSalary(12000.56).jobTitle("manager")
                 .build();
         Employee savedEmployee = employeeRepository.save(employee);
         Integer userId = 1;

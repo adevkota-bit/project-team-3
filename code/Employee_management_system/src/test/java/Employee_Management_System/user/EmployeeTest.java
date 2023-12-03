@@ -4,6 +4,8 @@ import Employee_Management_System.user.Employee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.UUID;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EmployeeTest {
@@ -22,8 +24,9 @@ class EmployeeTest {
 
     @Test
     void testGetId() {
-        employee.setId(123);
-        assertEquals(123, employee.getId());
+        UUID uuid = UUID.randomUUID();
+        employee.setId(uuid);
+        assertEquals(uuid, employee.getId());
     }
 
     @Test

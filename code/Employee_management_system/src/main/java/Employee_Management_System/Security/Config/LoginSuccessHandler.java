@@ -1,6 +1,5 @@
 package Employee_Management_System.Security.Config;
 
-import Employee_Management_System.credential.Credential;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

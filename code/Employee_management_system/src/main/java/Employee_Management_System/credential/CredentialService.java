@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -25,6 +26,7 @@ public class CredentialService{
 
     public AuthenticationResponse register(RegisterRequest request) {
         var user = Credential.builder()
+                .id(UUID.randomUUID())
                 .firstname(request.getFirstname())
                 .lastname(request.getLastname())
                 .username(request.getUsername())

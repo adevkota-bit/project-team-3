@@ -10,7 +10,6 @@ import java.security.SecureRandom;
 import java.util.Base64;
 
 public class EncryptDecrypt {
-
     public static SecretKey generateKey(int n) throws NoSuchAlgorithmException {
         KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
         keyGenerator.init(n);
@@ -29,7 +28,7 @@ public class EncryptDecrypt {
             BadPaddingException, IllegalBlockSizeException {
 
         Cipher cipher = Cipher.getInstance(algorithm);
-        cipher.init(Cipher.ENCRYPT_MODE, key, iv);
+        cipher.init(Cipher.ENCRYPT_MODE, key,iv);
         byte[] cipherText = cipher.doFinal(input.getBytes());
         return Base64.getUrlEncoder().encodeToString(cipherText);
     }
@@ -40,7 +39,7 @@ public class EncryptDecrypt {
             BadPaddingException, IllegalBlockSizeException {
 
         Cipher cipher = Cipher.getInstance(algorithm);
-        cipher.init(Cipher.DECRYPT_MODE, key, iv);
+        cipher.init(Cipher.DECRYPT_MODE, key,iv);
         byte[] plainText = cipher.doFinal(Base64.getUrlDecoder()
                 .decode(cipherText));
         return new String(plainText);

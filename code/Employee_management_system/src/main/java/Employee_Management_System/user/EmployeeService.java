@@ -18,7 +18,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 
 @Service
@@ -30,6 +29,7 @@ public class EmployeeService {
     @Autowired
     private CredentialRepository credentialRepository;
 
+
     SecretKey key;
 
     {
@@ -40,9 +40,8 @@ public class EmployeeService {
         }
     }
 
-    IvParameterSpec ivParameterSpec = EncryptDecrypt.generateIv();
-
     String algorithm = "AES/CBC/PKCS5Padding";
+    IvParameterSpec ivParameterSpec = EncryptDecrypt.generateIv();
 
 
     public List<Employee> getAllEmployee() throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException {
@@ -79,7 +78,6 @@ public class EmployeeService {
     public void updateEmployeeName(String employeeId, String name) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException {
         var id = EncryptDecrypt.decrypt(algorithm,employeeId,key,ivParameterSpec);
         Employee employee = employeeRepository.findById(id).get();
-
         employee.setName(name);
 
     }

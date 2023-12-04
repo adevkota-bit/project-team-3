@@ -5,6 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import Exception.ResourceNotFoundException;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,7 +29,7 @@ public class AdminController {
 
     @GetMapping(path = "/allemployee")
     //@GetMapping
-    public List<Employee> getAllEmployee(){
+    public List<Employee> getAllEmployee() throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException {
         return employeeService.getAllEmployee();
     }
 
@@ -33,7 +39,7 @@ public class AdminController {
     }
 
     @DeleteMapping(path = "{employeeID}")
-    public void deleteEmployee(@PathVariable String employeeID){
+    public void deleteEmployee(@PathVariable String employeeID) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException {
         employeeService.deleteEmployeeById(employeeID);
     }
 
@@ -41,12 +47,12 @@ public class AdminController {
     public void updateEmployeeName(
             @PathVariable String employeeId,
             @RequestParam(required = false) String name
-    ){
+    ) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException {
         employeeService.updateEmployeeName(employeeId, name);
     }
 
     @GetMapping("/employee/{id}")
-    public Optional<Employee> getEmployeeById(@PathVariable String id ){
+    public Optional<Employee> getEmployeeById(@PathVariable String id ) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, BadPaddingException, InvalidKeyException {
        var employee = employeeService.getEmployeeById(id);
 
        if (employee.isPresent()){

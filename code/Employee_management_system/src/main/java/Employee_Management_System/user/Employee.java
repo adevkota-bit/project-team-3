@@ -1,13 +1,8 @@
 package Employee_Management_System.user;
 
-import at.favre.lib.bytes.Bytes;
-import at.favre.lib.idmask.Config;
-import at.favre.lib.idmask.IdMask;
-import at.favre.lib.idmask.IdMasks;
 import jakarta.persistence.*;
 import lombok.Builder;
 
-import java.util.UUID;
 
 @Entity
 @Table(name = "employees_info")

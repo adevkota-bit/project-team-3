@@ -1,5 +1,9 @@
 package Employee_Management_System.user;
 
+import at.favre.lib.bytes.Bytes;
+import at.favre.lib.idmask.Config;
+import at.favre.lib.idmask.IdMask;
+import at.favre.lib.idmask.IdMasks;
 import jakarta.persistence.*;
 import lombok.Builder;
 
@@ -105,4 +109,17 @@ public class Employee {
                 ", annualSalary=" + annualSalary +
                 '}';
     }
+
+    public Employee copy(){
+        Employee employee = new Employee();
+        employee.setId(this.id);
+        employee.setEmail(this.email);
+        employee.setName(this.name);
+        employee.setPhoneNumber(this.phoneNumber);
+        employee.setAnnualSalary(this.annualSalary);
+        employee.setJobTitle(this.jobTitle);
+        return employee;
+    }
+
+
 }

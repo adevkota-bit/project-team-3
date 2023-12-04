@@ -6,6 +6,7 @@ import Employee_Management_System.credential.RegisterRequest;
 import Employee_Management_System.credential.Role;
 import Employee_Management_System.user.Employee;
 import Employee_Management_System.user.EmployeeRepository;
+import Employee_Management_System.user.EmployeeService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,7 +24,7 @@ public class EmsV1Application {
 	@Bean
 	public CommandLineRunner commandLineRunner(
 			CredentialService service,
-			EmployeeRepository employeeRepo
+			EmployeeService employeeRepo
 
 	) {
 		return args -> {
@@ -79,7 +80,9 @@ public class EmsV1Application {
 
 
 
-			employeeRepo.saveAll(List.of(employee1, employee2, employee3));
+			employeeRepo.addNewEmployee(employee1);
+			employeeRepo.addNewEmployee(employee2);
+			employeeRepo.addNewEmployee(employee3);
 
 		};
 	}

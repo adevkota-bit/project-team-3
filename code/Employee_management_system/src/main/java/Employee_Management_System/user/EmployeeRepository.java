@@ -1,6 +1,6 @@
 package Employee_Management_System.user;
 
-import Employee_Management_System.user.Employee;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Component;
@@ -15,8 +15,4 @@ public interface EmployeeRepository extends JpaRepository<Employee,String> {
 
     @Query("select e from Employee e where e.name = ?1")
     Optional<Employee> findEmployeeByName(String name);
-
-
-
-
 }
